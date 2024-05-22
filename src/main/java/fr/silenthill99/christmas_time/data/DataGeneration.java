@@ -1,6 +1,7 @@
 package fr.silenthill99.christmas_time.data;
 
 import fr.silenthill99.christmas_time.Main;
+import fr.silenthill99.christmas_time.data.loot_tables.LootTableGenerator;
 import fr.silenthill99.christmas_time.data.models_and_blockstates.BlockStateGenerator;
 import fr.silenthill99.christmas_time.data.models_and_blockstates.ItemModelGenerator;
 import fr.silenthill99.christmas_time.data.tags.BlockTagsGenerator;
@@ -38,6 +39,7 @@ public class DataGeneration {
                 lookupProvider, existingFileHelper));
         generator.addProvider(server, new ItemTagsGenerator(packOutput, lookupProvider,
                 blockTagsGenerator.contentsGetter(), existingFileHelper));
+        generator.addProvider(server, new LootTableGenerator(packOutput));
     }
 
 }
