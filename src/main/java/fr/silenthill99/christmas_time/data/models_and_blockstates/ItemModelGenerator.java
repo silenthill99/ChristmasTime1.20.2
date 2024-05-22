@@ -24,6 +24,6 @@ public class ItemModelGenerator extends ItemModelProvider {
     private void cdItem(RecordItem item) {
         path = ForgeRegistries.ITEMS.getKey(item).getPath();
         withExistingParent(path, mcLoc("item/generated"))
-                .texture("layer0", mcLoc("item/music_disc_mellohi"));
+                .texture("layer0", modLoc("item/christmas_cd"));
     }
 }

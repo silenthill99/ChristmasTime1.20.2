@@ -1,6 +1,7 @@
 package fr.silenthill99.christmas_time.data;
 
 import fr.silenthill99.christmas_time.Main;
+import fr.silenthill99.christmas_time.data.models_and_blockstates.BlockStateGenerator;
 import fr.silenthill99.christmas_time.data.models_and_blockstates.ItemModelGenerator;
 import fr.silenthill99.christmas_time.data.tags.BlockTagsGenerator;
 import fr.silenthill99.christmas_time.data.tags.ItemTagsGenerator;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.*;
 
 import java.util.concurrent.CompletableFuture;
 
+@SuppressWarnings("unused")
 @EventBusSubscriber(modid = Main.MODID, bus = Bus.MOD)
 public class DataGeneration {
 
@@ -30,6 +32,7 @@ public class DataGeneration {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(client, new ItemModelGenerator(packOutput, existingFileHelper));
+        generator.addProvider(client, new BlockStateGenerator(packOutput, existingFileHelper));
 
         BlockTagsGenerator blockTagsGenerator = generator.addProvider(server, new BlockTagsGenerator(packOutput,
                 lookupProvider, existingFileHelper));

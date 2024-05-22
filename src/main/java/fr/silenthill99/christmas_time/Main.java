@@ -1,8 +1,10 @@
 package fr.silenthill99.christmas_time;
 
+import fr.silenthill99.christmas_time.init.ModBlocks;
 import fr.silenthill99.christmas_time.init.ModItems;
 import fr.silenthill99.christmas_time.utils.ModCreativeTabs;
 import fr.silenthill99.christmas_time.utils.ModSoundEvents;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +23,7 @@ public class Main {
         bus.addListener(this::clientSetup);
         bus.addListener(this::addCreativeTab);
         ModItems.ITEMS.register(bus);
+        ModBlocks.BLOCKS.register(bus);
         ModSoundEvents.SOUNDS.register(bus);
         ModCreativeTabs.TABS.register(bus);
     }
@@ -34,6 +37,8 @@ public class Main {
     }
 
     public void addCreativeTab(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.GINGERBREAD_SUGAR);
+        }
     }
 }
