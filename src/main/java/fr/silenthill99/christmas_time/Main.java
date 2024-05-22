@@ -1,6 +1,7 @@
 package fr.silenthill99.christmas_time;
 
 import fr.silenthill99.christmas_time.init.ModItems;
+import fr.silenthill99.christmas_time.utils.ModCreativeTabs;
 import fr.silenthill99.christmas_time.utils.ModSoundEvents;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,6 +22,7 @@ public class Main {
         bus.addListener(this::addCreativeTab);
         ModItems.ITEMS.register(bus);
         ModSoundEvents.SOUNDS.register(bus);
+        ModCreativeTabs.TABS.register(bus);
     }
 
     public void setup(FMLCommonSetupEvent event) {
@@ -34,5 +36,4 @@ public class Main {
     public void addCreativeTab(BuildCreativeModeTabContentsEvent event) {
 
     }
-
 }
