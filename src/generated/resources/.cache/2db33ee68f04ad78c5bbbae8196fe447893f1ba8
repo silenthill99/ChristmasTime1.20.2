@@ -1,1 +1,3 @@
-// 1.20.2	2024-05-21T22:52:46.5818913	Tags for minecraft:block mod id christmas_time
+// 1.20.2	2024-05-25T14:49:33.9085152	Tags for minecraft:block mod id christmas_time
+e07db6de4fe26a2682481682229644f5106a8d6c data/forge/tags/blocks/needs_netherite_tool.json
+e07db6de4fe26a2682481682229644f5106a8d6c data/minecraft/tags/blocks/mineable/pickaxe.json

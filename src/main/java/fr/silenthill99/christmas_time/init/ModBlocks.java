@@ -16,7 +16,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MODID);
 
     public static final RegistryObject<Block> GINGERBREAD_SUGAR = createBlock("gingerbread_sugar",
-            () -> new Block(BlockBehaviour.Properties.of()));
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
 
     private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> supplier) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);

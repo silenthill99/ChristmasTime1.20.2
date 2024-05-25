@@ -28,5 +28,5 @@ public class ModItems {
     public static final RegistryObject<Item> BARLEY_SWORD = ITEMS.register("barley_sword",
             () -> new SwordItem(ModToolTiers.BARLEY, 3, -3, new Item.Properties()));
     public static final RegistryObject<Item> BARLEY_PICKAXE = ITEMS.register("barley_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.BARLEY, 3, -3, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.BARLEY, 3, 3, new Item.Properties()));
 }
