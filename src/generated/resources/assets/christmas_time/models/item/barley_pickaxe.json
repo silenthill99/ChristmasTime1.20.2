@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "christmas_time:item/barley_pickaxe"
+  }
+}
