@@ -1,6 +1,7 @@
 package fr.silenthill99.christmas_time.utils;
 
 import fr.silenthill99.christmas_time.Main;
+import fr.silenthill99.christmas_time.init.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
@@ -14,11 +15,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.function.Supplier;
 
-public enum ModToolTiers implements Tier {
-    BARLEY("barley", 5, 1, 0, 2, 15,
-            ModTags.ModBlockTags.NEEDS_BARLEY_TOOLS, () -> Ingredient.EMPTY, List.of(Tiers.NETHERITE), List.of())
+public enum ModToolTiers implements Tier{
+
+    BARLEY("barley", 5, 20, 2, 3, 5,
+            ModTags.ModBlockTags.NEEDS_BARLEY_TOOLS, () -> Ingredient.of(ModItems.BARLEY.get()),
+            List.of(Tiers.NETHERITE), List.of())
     ;
-    private final String title;
+
     private final int level;
     private final int uses;
     private final float speed;
@@ -26,13 +29,10 @@ public enum ModToolTiers implements Tier {
     private final int enchantmentValue;
     private final @NotNull TagKey<Block> tag;
     private final @NotNull Supplier<Ingredient> repairIngredient;
-    private final List<Object> after;
-    private final List<Object> before;
 
     ModToolTiers(String title, int level, int uses, float speed, float attackDamageBonus, int enchantmentValue,
-                 @NotNull TagKey<Block> tag, @NotNull Supplier<Ingredient> repairIngredient, List<Object> after,
-                 List<Object> before) {
-        this.title = title;
+              @NotNull TagKey<Block> tag, @NotNull Supplier<Ingredient> repairIngredient, List<Object> after,
+              List<Object> before) {
         this.level = level;
         this.uses = uses;
         this.speed = speed;
@@ -40,14 +40,8 @@ public enum ModToolTiers implements Tier {
         this.enchantmentValue = enchantmentValue;
         this.tag = tag;
         this.repairIngredient = repairIngredient;
-        this.after = after;
-        this.before = before;
         TierSortingRegistry.registerTier(new ForgeTier(level, uses, speed, attackDamageBonus, enchantmentValue, tag,
-                        repairIngredient), new ResourceLocation(Main.MODID, title), after, before);
-    }
-
-    public String getTitle() {
-        return title;
+                repairIngredient), new ResourceLocation(Main.MODID, title), after, before);
     }
 
     @Override
@@ -83,13 +77,5 @@ public enum ModToolTiers implements Tier {
     @Override
     public @NotNull TagKey<Block> getTag() {
         return tag;
-    }
-
-    public List<Object> getAfter() {
-        return after;
-    }
-
-    public List<Object> getBefore() {
-        return before;
     }
 }

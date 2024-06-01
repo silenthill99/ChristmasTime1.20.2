@@ -17,6 +17,7 @@ public class BlockLootTableGenerator extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.GINGERBREAD_SUGAR.get());
+        dropSelf(ModBlocks.TEST.get());
     }
 
     @Override

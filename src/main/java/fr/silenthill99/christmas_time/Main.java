@@ -24,8 +24,8 @@ public class Main {
         bus.addListener(this::addCreativeTab);
         ModItems.ITEMS.register(bus);
         ModBlocks.BLOCKS.register(bus);
-        ModSoundEvents.SOUNDS.register(bus);
         ModCreativeTabs.TABS.register(bus);
+        ModSoundEvents.SOUNDS.register(bus);
     }
 
     public void setup(FMLCommonSetupEvent event) {
@@ -39,6 +39,7 @@ public class Main {
     public void addCreativeTab(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.GINGERBREAD_SUGAR);
+            event.accept(ModBlocks.TEST);
         }
 
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {

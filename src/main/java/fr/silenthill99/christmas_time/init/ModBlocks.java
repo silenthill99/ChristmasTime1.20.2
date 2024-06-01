@@ -18,6 +18,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> GINGERBREAD_SUGAR = createBlock("gingerbread_sugar",
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> TEST = createBlock("test_block",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()));
+
     private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> supplier) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

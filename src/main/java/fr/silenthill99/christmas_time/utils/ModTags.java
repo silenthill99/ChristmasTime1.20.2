@@ -10,7 +10,7 @@ public class ModTags {
 
     public static class ModBlockTags {
 
-        public static final TagKey<Block> NEEDS_BARLEY_TOOLS = createTag("needs-barley_tools");
+        public static final TagKey<Block> NEEDS_BARLEY_TOOLS = createTag("needs_barley_tools");
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(new ResourceLocation(Main.MODID, name));
